@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Fad Fusion - Products</title>
+  <link rel="icon" href="images/logo.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3">
+    <a class="navbar-brand" href="index.html">ꜰᴀᴅ ꜰᴜꜱɪᴏɴ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+  <header class="text-center text-white hero-small">
+    <div class="container">
+      <h1 class="display-4">Our Products</h1>
+      <p class="lead">Explore our full collection</p>
+    </div>
+  </header>
+
+  
+  <section class="container text-center my-4">
+    <h3 class="mb-3">Shop by Category</h3>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-dark" onclick="location.href='products.html'">All</button>
+      <button type="button" class="btn btn-outline-dark active" onclick="location.href='products-men.html'">Men</button>
+      <button type="button" class="btn btn-outline-dark" onclick="location.href='products-women.html'">Women</button>
+    </div>
+  </section>
+
+  
+  <section class="container my-5">
+    <div class="row">
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images\men1.avif" class="card-img-top p-5" alt="Product 1">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Loose Fit Hole-knit polo shirt</h5>
+            <p class="card-text">₹1299</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Loose Fit Hole-knit polo shirt', 1299)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images\men2.avif" class="card-img-top p-5" alt="Product 2">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Loose Fit Hoodie</h5>
+            <p class="card-text">₹1599</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Loose Fit Hoodie', 1599)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men3.avif" class="card-img-top p-5" alt="Product 3">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Loose Fit Baseball jacket</h5>
+            <p class="card-text">₹1399</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Loose Fit Baseball jacket', 1399)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men4.avif" class="card-img-top p-5" alt="Product 4">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Regular Fit Felted overshirt</h5>
+            <p class="card-text">₹1399</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Regular Fit Felted overshirt', 1399)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men5.avif" class="card-img-top p-5" alt="Product 5">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Patterned resort shirt</h5>
+            <p class="card-text">₹1499</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Patterned resort shirt', 1499)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men6.avif" class="card-img-top p-5" alt="Product 6">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Regular Fit Felted overshirt (Black)</h5>
+            <p class="card-text">₹1999</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Regular Fit Felted overshirt (Black)', 1999)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men7.avif" class="card-img-top p-5" alt="Product 7">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Regular Fit Textured resort shirt</h5>
+            <p class="card-text">₹1099</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Regular Fit Textured resort shirt', 1099)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-3 mb-4 d-flex h-89">
+        <div class="card shadow-sm">
+          <img src="images/men8.avif" class="card-img-top p-5" alt="Product 8">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title">Loose Fit Sweatshirt</h5>
+            <p class="card-text">₹1199</p>
+            <button class="btn btn-outline-primary mt-auto" onclick="addToCart('Loose Fit Sweatshirt', 1199)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <nav aria-label="Product navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item active"><a class="page-link" href="products-men.html">1</a></li>
+      <li class="page-item"><a class="page-link" href="products2-men.html">2</a></li>
+      <li class="page-item"><a class="page-link" href="products2-men.html">Next</a></li>
+    </ul>
+  </nav>
+
+  
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Fad Fusion. All rights reserved.</p>
+  </footer>
+</body>
+</html>

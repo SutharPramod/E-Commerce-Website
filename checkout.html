@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Fad Fusion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    .checkout-container {
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container checkout-container">
+    <h2 class="mb-4 text-center" style="font-size: 100px;">Checkout</h2>
+
+    
+    <div class="card mb-4">
+      <div class="card-header">Order Summary</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="checkoutItems"></tbody>
+        </table>
+        <h4 class="text-right">Total: ₹<span id="checkoutTotal">0</span></h4>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="card-header">Billing Details</div>
+      <div class="card-body">
+        <form id="checkoutForm" novalidate>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Full Name</label>
+              <input type="text" class="form-control" required>
+              <div class="invalid-feedback">Please enter your name</div>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Email</label>
+              <input type="email" class="form-control" required>
+              <div class="invalid-feedback">Please enter a valid email</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" required>
+            <div class="invalid-feedback">Please enter your address</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>City</label>
+              <input type="text" class="form-control" required>
+              <div class="invalid-feedback">Please enter your city</div>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Zip Code</label>
+              <input type="text" class="form-control" required>
+              <div class="invalid-feedback">Please enter your zip code</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadCheckout() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let checkoutItems = document.getElementById("checkoutItems");
+      let checkoutTotal = document.getElementById("checkoutTotal");
+
+      checkoutItems.innerHTML = "";
+      let total = 0;
+
+      for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        checkoutItems.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>₹${item.price.toFixed(2)}</td>
+            <td>${item.quantity}</td>
+            <td>₹${subtotal.toFixed(2)}</td>
+          </tr>`;
+      }
+      checkoutTotal.textContent = total.toFixed(2);
+    }
+
+    document.getElementById("checkoutForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      if (this.checkValidity() === false) {
+        event.stopPropagation();
+      } else {
+        alert("✅ Order placed successfully! Thank you for shopping with Fad Fusion.");
+        localStorage.removeItem("cart"); 
+        window.location.href = "index.html"; 
+      }
+      this.classList.add("was-validated");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadCheckout();
+    });
+  </script>
+</body>
+</html>
